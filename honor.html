@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRS Club</title>
+    <link rel="icon" href="./icon/favicon.ico">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        }
+        
+        .flex {
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        
+        .flex_bet {
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+        
+        .bg {
+            background-image: url(./img/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .bgcolor {
+            background-color: grey;
+        }
+        
+        video {
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+            /*加滤镜*/
+            /*filter: blur(1px); //背景模糊设置 */
+            /*-webkit-filter: grayscale(100%);*/
+            filter: grayscale(10%);
+            /*//背景灰度设置*/
+            z-index: -11
+        }
+        
+        source {
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+        </button>
+                <a class="navbar-brand layui-bg-black" href="#" id="club" onclick="cname();" alt="风舞轮滑俱乐部Flying roller skating club">Phoenix Flying RS Club</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="main.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页
+                <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">时间：晚上7:00-10:30</a></li>
+                    <li> <a href="#"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>地点1：西校区第三体育场</a>
+                    </li>
+                    <li> <a href="#"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>地点2：东校区</a></li>
+                </ul>
+
+                <!-- <form class="navbar-form navbar-left">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="button" onclick="cl4();"><a href="#"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>联系我们</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle layui-bg-black" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"
+                        aria-hidden="true"></span>Learn more </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="days.html">日常</a></li>
+                            <li role="separator" class="divider"></li>
+
+                            <li class="layui-anim layui-anim-scale" role="button" onclick="cl3();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;表演队</li>
+                            <!--搞得有点垃圾-->
+                            <li role="separator" class="divider"></li>
+
+                            <li><a href="news.html">资讯分享</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">荣誉殿堂</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- 背景视频 -->
+    <div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
+        <div class="xl-chrome-ext-bar__logo"></div>
+
+        <a id="xl_chrome_ext_download" href="javascript:;" class="xl-chrome-ext-bar__option">下载视频</a>
+        <a id="xl_chrome_ext_close" href="javascript:;" class="xl-chrome-ext-bar__close"></a>
+    </div>
+    <video autoplay loop muted preload="auto">
+        <source src="./movies/927.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+
+
+    <!-- 巨幕2 -->
+    <div class="page-header">
+        <h1 class="flex" style="color: white;"> </h1>
+    </div>
+    <div class="page-header">
+        <h1 class="flex" style="color: white;"> 荣誉殿堂-个人 </h1>
+    </div>
+    <!-- honor项 -->
+    <div class="layui-fluid">
+        <div class="layui-row">
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/image002.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/image004.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/image006.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/image008.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/image010.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/image012.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/image014.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/image016.jpg" alt="载入中..."></div>
+            </div>
+        </div>
+    </div>
+    <!-- 2 -->
+    <div class="layui-row layui-hide-xs">
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+            <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/image018.jpg" alt="载入中..."></div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+            <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/image020.jpg" alt="载入中..."></div>
+        </div>
+    </div>
+    <!-- 巨幕3 -->
+    <div class="page-header">
+        <h1 class="flex" style="color: white;"> 荣誉殿堂-团体 </h1>
+    </div>
+    <!-- team -->
+    <div class="layui-fluid">
+        <div class="layui-row">
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/team/image008.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/team/image006.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/team/image012.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-sm3">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/team/image004.jpg" alt="载入中..."></div>
+            </div>
+        </div>
+            <!-- 2 -->
+        <div class="layui-row layui-hide-xs">
+            <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/team/image010.jpg" alt="载入中..."></div>
+            </div>
+            <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+                <div class="grid-demo grid-demo-bg1"><img lay-src="./img/honor/team/image010.jpg" alt="载入中..."></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div>
+        <div id="jnkc" style="text-align: center; color:white;"> </div>
+        <div style="text-align: center; color:white;">Shandong University of Technology
+        </div>
+        <div style="text-align: center;color:white;">Copyright © 2018-2020 Cold Arche All Rights Reserved
+        </div>
+    </div>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        function openUrl(url) {
+            window.open(url, 'framA');
+        }
+        setInterval("jnkc.innerHTML=new Date().toLocaleDateString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay())+' '+new Date().toLocaleTimeString()", 1000);
+    </script>
+    <script src="./layui/layui.all.js" charset="utf-8"></script>
+    <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+
+
+
+    <script>
+        layui.use(['rate'], function() {
+            var rate = layui.rate;
+            //半星效果
+            rate.render({
+                elem: '#test3',
+                value: 2.5 //初始值
+                    ,
+                half: true //开启半星
+            })
+            rate.render({
+                elem: '#test4',
+                value: 3.5,
+                half: true,
+                text: true
+            })
+        });
+    </script>
+    <script>
+        layui.use(['util', 'laydate', 'layer'], function() {
+            var util = layui.util,
+                laydate = layui.laydate,
+                $ = layui.$,
+                layer = layui.layer;
+            //固定块
+            util.fixbar({
+                bar1: true,
+                bar2: true,
+                css: {
+                    right: 50,
+                    bottom: 100
+                },
+                bgcolor: '#393D49',
+                click: function(type) {
+                    if (type === 'bar1') {
+                        layer.msg(' 社团承诺：包教！包会！包婚配！')
+                    } else if (type === 'bar2') {
+                        layer.msg('你是要找 Cold 和 Arche吗')
+                    }
+                }
+            });
+
+
+        });
+    </script>
+    <script>
+        layui.use('layer', function() { //独立版的layer无需执行这一句
+            var $ = layui.jquery,
+                layer = layui.layer; //独立版的layer无需执行这一句
+
+            //触发事件
+            var active = {
+                notice: function() {
+                    //示范一个公告层
+                    layer.open({
+                        type: 1,
+                        title: false //不显示标题栏
+                            ,
+                        closeBtn: false,
+                        area: '300px;',
+                        shade: 0.8,
+                        id: 'LAY_layuipro' //设定一个id，防止重复弹出
+                            ,
+                        btn: ['一探究竟', '再想想'],
+                        btnAlign: 'c',
+                        moveType: 1 //拖拽模式，0或者1
+                            ,
+                        content: '<div style="padding-right: 1px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300; text-align:center;"><br><img src="./img/QRcode.png"></div>',
+                        success: function(layero) {
+                            var btn = layero.find('.layui-layer-btn');
+                            btn.find('.layui-layer-btn0 ').attr({
+                                href: 'https://www.bilibili.com/video/av46383259/',
+                                target: '_blank'
+                            });
+                        }
+                    });
+                }
+            };
+
+            $('#layerDemo .layui-btn').on('click', function() {
+                var othis = $(this),
+                    method = othis.data('method');
+                active[method] ? active[method].call(this, othis) : '';
+            });
+
+        });
+    </script>
+    <script>
+        layui.use('flow', function() {
+            var flow = layui.flow;
+            //当你执行这样一个方法时，即对页面中的全部带有lay-src的img元素开启了懒加载（当然你也可以指定相关img）
+            flow.lazyimg();
+        });
+    </script>
+    <script>
+        function cname() {
+            var name = document.getElementById('club');
+            var club = name.innerHTML;
+            if (club == "风舞轮滑俱乐部") name.innerHTML = "Phoenix Flying RS Club";
+            else if (club != "风舞轮滑俱乐部") name.innerHTML = "风舞轮滑俱乐部";
+
+        }
+    </script>
+</body>
+
+</html>
