@@ -1,0 +1,10 @@
+.flex{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.flex-bet{
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-between;
+}
